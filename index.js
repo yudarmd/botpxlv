@@ -50,8 +50,6 @@ const headers = {
     var domain = readline.question(`[ ${moment().format("HH:mm:ss")} ] ` + 'Domain email : ');
     var referralCode = readline.question(`[ ${moment().format("HH:mm:ss")} ] ` + 'Reff Code : ');
     var jumlah = readline.question(`[ ${moment().format("HH:mm:ss")} ] ` + 'Jumlah Reff : ');
-    // var referralCode = "hariipulpi";
-    // var jumlah = "999999999999";
 
     const otpRequestURL = 'https://api.pixelverse.xyz/api/otp/request';
     const otpVerificationURL = 'https://api.pixelverse.xyz/api/auth/otp';
