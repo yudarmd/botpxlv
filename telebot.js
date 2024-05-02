@@ -22,17 +22,17 @@ function postData() {
 
   axios.post('https://api-clicker.pixelverse.xyz/api/users', data, config)
     .then((response) => {
-      console.log('Response:', response.data);
-      if (response.data.energy > 1) {
-        console.log('Energy lebih dari 1. Melakukan loop berikutnya...');
+      console.log(`telegramUserId: ${response.data.telegramUserId} | energy: ${response.data.pet.energy} | total point: ${response.data.clicksCount}`);
+      if (response.data.pet.energy > 1) {
         postData();
       } else {
-        console.log('Energy kurang dari atau sama dengan 1. Menunggu 1 menit sebelum melakukan loop berikutnya...');
+        console.log('Delay 1 Menit');
         setTimeout(postData, 60000);
       }
     })
     .catch((error) => {
       console.error('Error:', error);
+      postData();
     });
 }
 
